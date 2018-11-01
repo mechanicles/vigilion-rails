@@ -1,5 +1,7 @@
 class Vigilion::VigilionController < ActionController::Base
-  skip_before_filter :verify_authenticity_token
+  # 'raise: false' option is a Rails 5 feature
+
+  skip_before_filter :verify_authenticity_token, raise: false
   before_action :verify_api_auth
 
   def callback
